@@ -17,7 +17,7 @@ const InputField = ({ placeholder, name, type = 'text', validation, register, er
         placeholder={placeholder}
         {...register(name, validation)}
       />
-      {errors[name] && <p style={{ color: 'red' }}>{errors[name]?.message}</p>}
+      {errors[name] && <span className={styles.p}>{errors[name]?.message}</span>}
     </div>
   );
 };

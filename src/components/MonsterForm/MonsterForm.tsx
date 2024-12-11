@@ -86,8 +86,8 @@ const MonsterForm = ({ onAddMonster }: MonsterFormProps) => {
         name="hp"
         validation={
           { 
-            required: "HP é obrigatório.",
-            min: { value: 1, message: "HP deve ser pelo menos 1" },
+            required: "Vida é obrigatória.",
+            min: { value: 1, message: "Vida deve ser pelo menos 1" },
           }
         }
         register={register}

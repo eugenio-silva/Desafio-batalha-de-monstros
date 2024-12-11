@@ -15,35 +15,44 @@ const App = () => {
     <div>
       <h1>Desafio Batalha de Monstros</h1>
 
-      {monsters.length === 2 ? 
-        <button 
-          type="submit"  
-          onClick={() => setMonsters([])}
-        >
-          Jogar Novamente
-        </button> : 
-          <MonsterForm onAddMonster={addMonster} />
-      }
+    {monsters.length === 2 ? 
+      <button 
+        type="submit"  
+        onClick={() => setMonsters([])}
+      >
+        Jogar Novamente
+      </button> : 
+        <MonsterForm onAddMonster={addMonster} />
+    }
 
-      <ul>
-        {monsters.map((monster, index) => (
-          <div>
-          <h4>Monstro: {monster.name}</h4>
-          <li key={index}>
-            Ataque: {monster.attack},
-            Defesa: {monster.defense},
-            Velocidade: {monster.speed},
-            Vida: {monster.hp}
-          </li>
-          </div>
+    <table>
+      <thead>
+        <tr>
+          <th>Monstro</th>
+          <th>Ataque</th>
+          <th>Defesa</th>
+          <th>Velocidade</th>
+          <th>Vida</th>
+        </tr>
+      </thead>
+      <tbody>
+        {monsters.map((monster) => (
+          <tr key={monster.name}>
+            <td>{monster.name}</td>
+            <td>{monster.attack}</td>
+            <td>{monster.defense}</td>
+            <td>{monster.speed}</td>
+            <td>{monster.hp}</td>
+          </tr>
         ))}
-      </ul>
+      </tbody>
+    </table>
 
-      {monsters.length >= 2 && (
-        <div>
-          <Battle monsters={monsters.slice(0, 2)} />
-        </div>
-      )}
+    {monsters.length >= 2 && (
+      <div>
+        <Battle monsters={monsters.slice(0, 2)} />
+      </div>
+    )}
     </div>
   );
 };

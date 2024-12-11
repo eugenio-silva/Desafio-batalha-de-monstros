@@ -1,5 +1,7 @@
 import { useState } from "react";
 import { BattleProps } from "../../types/BattleProps";
+import { PulseLoader } from "react-spinners";
+import style from "./Battle.module.css";
 
 const Battle = ({ monsters }: BattleProps) => {
   const [fakeLoading, setFakeLoading] = useState(true);
@@ -45,10 +47,12 @@ const Battle = ({ monsters }: BattleProps) => {
   return (
     <div>
       {fakeLoading ? 
-        <p>Lutaando...</p> : 
+        <PulseLoader
+          color="#5353ec"
+        /> : 
         <div>
-          <h3>Resultado:</h3>
-          <p>{result}</p>
+          <h2 className={style.result}>Resultado:</h2>
+          <h2>{result}</h2>
         </div>
       }
     </div>

@@ -22,4 +22,4 @@ Rode o Projeto e clique no link gerado no terminal para abrir no navegador
 npm run dev
 ```
 
-Nesse Desafio foi usado vite (React + Typescript), React Hook Forms
+Nesse Desafio foi usado vite (React + Typescript), React Hook Forms e react-spinners
